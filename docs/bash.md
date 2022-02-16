@@ -37,3 +37,17 @@ pkill -f <command>  # Send SIGTERM to all processes matching <command>
 
 The option `-f` is useful as you match entire command (program and it's arguments) that was executed.
 Use `pgrep` before `pkill` to check what processes you will terminate (like using `ls` before `rm`).
+
+### 4) Explore/display CSV/TSV file in bash
+
+Display data separated in columns, use arrows to move around the file. Press `q` to exit
+
+```bash
+cat <tsv file> | column -t -s $'\t' | less -S  # For TSV files
+
+cat <csv file> | column -t -s ',' | less -S  # For CSV files
+```
+
+Useful for quick validation of the data. You can use `head` to limit number of rows. 
+Does not work if the string values contains separator as part of value
+for example the literal `"apple, banana, orange"` would be split into three columns as it contains comma (even if quoted).
