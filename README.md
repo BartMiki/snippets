@@ -2,4 +2,4 @@
 
 Use links below to naviage:
 
-TODO
+* [Bash snippets](docs/bash.md)
