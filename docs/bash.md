@@ -51,3 +51,11 @@ cat <csv file> | column -t -s ',' | less -S  # For CSV files
 Useful for quick validation of the data. You can use `head` to limit number of rows. 
 Does not work if the string values contains separator as part of value
 for example the literal `"apple, banana, orange"` would be split into three columns as it contains comma (even if quoted).
+
+### 5) Display process that binds to a specific port
+
+Reference: [StackExchange](https://unix.stackexchange.com/a/106562)
+
+```
+sudo ss -lptn 'sport = :<port>'
+```
