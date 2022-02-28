@@ -59,3 +59,14 @@ Reference: [StackExchange](https://unix.stackexchange.com/a/106562)
 ```
 sudo ss -lptn 'sport = :<port>'
 ```
+### 6) Get directory/file name from a path
+
+Reference: [StackOverflow](https://stackoverflow.com/a/1371283/12396982)
+
+```
+dirname=$(pwd)              # Assign current directory to variable dirname
+shopt -s extglob            # enable +(...) glob syntax
+dirname=${dirname%%+(/)}    # trim however many trailing slashes exist
+dirname=${dirname##*/}      # remove everything before the last / that still remains
+echo "$dirname"
+```
