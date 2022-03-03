@@ -70,3 +70,9 @@ dirname=${dirname%%+(/)}    # trim however many trailing slashes exist
 dirname=${dirname##*/}      # remove everything before the last / that still remains
 echo "$dirname"
 ```
+
+### 7) Execute bash inside the Docker container
+
+```
+docker exec -it <container-id / name> bash
+```
