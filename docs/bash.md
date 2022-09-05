@@ -76,3 +76,13 @@ echo "$dirname"
 ```
 docker exec -it <container-id / name> bash
 ```
+
+### 8) Include hidden (dotfiles) files in glob pattern
+
+Sometimes you want for the glob pattern to match all files, including the ones that starts with dot `.`. For example, for partial output files of Hadoop-like apps. You can force `*` pattern to include also hidden files. See [this StackOverflow response](https://unix.stackexchange.com/a/245807) for details.
+
+```
+shopt -s dotglob # enable dotglob
+shopt -u dotglob # disable dotglob
+```
+The `shopt` [documentation](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html).
